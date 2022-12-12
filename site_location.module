@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * File that handles all customizations for site_location.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function site_location_theme($existing, $type, $theme, $path) {
+  return [
+    'site_location' => [
+      'variables' => [
+        'content' => NULL,
+      ],
+    ],
+  ];
+}
