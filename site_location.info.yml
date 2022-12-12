@@ -1,0 +1,5 @@
+name: 'Site Location'
+type: module
+description: 'Custom module to show location and time.'
+package: 'Custom'
+core_version_requirement: ^9 || ^10
