@@ -68,6 +68,9 @@ class SiteLocationBlock extends BlockBase implements ContainerFactoryPluginInter
         'country' => $this->config->get('site_location.country'),
         'city' => $this->config->get('site_location.city'),
       ],
+      '#cache' => [
+        'max-age' => 0,
+      ],
     ];
   }
 

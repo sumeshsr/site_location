@@ -42,15 +42,15 @@ class SiteLocation {
    */
   public function getDateTime() {
     $timezone = self::TIMEZONE_LIST[$this->config->get('site_location.timezone')];
-    $userTimezone = new \DateTimeZone(date_default_timezone_get());
-    $gmtTimezone = new \DateTimeZone($timezone);
-    $myDateTime = new \DateTime("now", $gmtTimezone);
-    $offset = (string) $userTimezone->getOffset($myDateTime);
-    $myInterval = \DateInterval::createFromDateString($offset . 'seconds');
-    $myDateTime->add($myInterval);
+    $configuredTimezone = new \DateTimeZone($timezone);
+    $gmtTimezone = new \DateTimeZone('GMT');
+    $dateTime = new \DateTime("now", $gmtTimezone);
+    $offset = (string) $configuredTimezone->getOffset($dateTime);
+    $interval = \DateInterval::createFromDateString($offset . 'seconds');
+    $dateTime->add($interval);
     return [
-      'date' => $myDateTime->format('l, j F Y'),
-      'time' => $myDateTime->format('H:i a'),
+      'date' => $dateTime->format('l, j F Y'),
+      'time' => $dateTime->format('h:i a'),
     ];
   }
 
