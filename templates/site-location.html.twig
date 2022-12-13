@@ -1,0 +1,13 @@
+{#
+  Available Variables:
+    - content: The Content array.
+      - datetime: Date/Time as per the configured timezone.
+        - date
+        - time
+      - country
+      - city
+#}
+
+<h1 style="margin-bottom: 0">{{ content.datetime.time }}</h1>
+<div>{{ content.datetime.date }}</div>
+<div>{{ "Time in " ~ content.city ~ ", " ~ content.country }}</div>

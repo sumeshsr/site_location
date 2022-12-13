@@ -1,0 +1,4 @@
+services:
+  site.location:
+    class: Drupal\site_location\SiteLocation
+    arguments: ["@config.factory"]
